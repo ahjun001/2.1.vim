@@ -2,6 +2,7 @@
 source ~/Documents/Github/2.1.vim/1.Install/vimrc
 
 lua << EOF
+" trigger with <NORMAL>\cb
 vim.keymap.set('n', '<leader>cb', function()
   local row = vim.api.nvim_win_get_cursor(0)[1]
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, {
@@ -14,6 +15,7 @@ vim.keymap.set('n', '<leader>cb', function()
   vim.api.nvim_win_set_cursor(0, {row + 3, 0})
 end)
 
+" trigger with <NORMAL>\ex
 vim.keymap.set('n', '<leader>ex', function()
   local row = vim.api.nvim_win_get_cursor(0)[1]
   vim.api.nvim_buf_set_lines(0, row - 1, row, false, {
